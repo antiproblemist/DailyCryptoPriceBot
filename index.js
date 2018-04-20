@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.get("/", function(req, res) {
+app.post("/", function(req, res) {
 	const {message} = req.body
 
 	if (!message || message.text.toLowerCase().indexOf('price') < 0) {
