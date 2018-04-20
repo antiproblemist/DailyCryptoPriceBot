@@ -27,10 +27,10 @@ app.post("/", function(req, res) {
         }
       )
       .then(response => {
-        res.end("ok");
+        return res.end("ok");
       })
       .catch(err => {
-        res.end("Error :" + err);
+        return res.end("Error :" + err);
       });
   } else if (!message || message.text.toLowerCase().indexOf("price") < 0) {
     return res.end();
