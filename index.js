@@ -37,7 +37,7 @@ app.get("/", function(req, res) {
 		priceTable += "--------------------\n";
 	  }
 	  priceTable += "\n\nInvest in cloud mining https://hashflare.io/r/1E43F152"
-	  console.log(priceTable);
+	  //console.log(priceTable);
 	  
 	  axios.post('https://api.telegram.org/bot566997013:AAHA1BuuWdRaeOTVnfWE33oqDoB20eqk3sg/sendMessage', {
 		chat_id: message.chat.id,
