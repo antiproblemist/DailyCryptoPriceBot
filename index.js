@@ -52,7 +52,7 @@ app.post("/", function(req, res) {
         priceTable += "--------------------\n";
       }
       priceTable +=
-        "\nSimply type /price to get price of cryptocurrencies\n\nInvest in cloud mining https://hashflare.io/r/1E43F152";
+        "\nSimply type /price to get price of cryptocurrencies";
       //console.log(priceTable);
 
       axios
