@@ -57,5 +57,8 @@ app.get("/", function(req, res) {
   });
 });
 
+const port = process.env.PORT || 80;
 
-app.listen(80);
+app.listen(port, () => {
+	console.log('Express server listening on port', port)
+  });
