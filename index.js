@@ -49,10 +49,10 @@ app.post("/", function(req, res) {
         priceTable += `${table[1][i]}\n`;
         priceTable += `Price: ${table[3][i]}\n`;
         priceTable += `Change (24h): ${table[6][i]}\n`;
-        priceTable += "--------------------\n\nSimply type /price to get price of cryptocurrencies";
+        priceTable += "--------------------\n";
       }
       priceTable +=
-        "\n\nInvest in cloud mining https://hashflare.io/r/1E43F152";
+        "\nSimply type /price to get price of cryptocurrencies\n\nInvest in cloud mining https://hashflare.io/r/1E43F152";
       //console.log(priceTable);
 
       axios
