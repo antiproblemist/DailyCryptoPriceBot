@@ -1,11 +1,12 @@
 const express = require("express");
 const request = require("request");
-var bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 const cheerio = require("cheerio");
 const axios = require("axios");
 const cheerioTableparser = require("cheerio-tableparser");
 
 const app = express();
+const API_KEY = process.env.API_KEY
 
 app.use(bodyParser.json());
 app.use(
@@ -20,7 +21,7 @@ app.post("/", function(req, res) {
   if (message && message.text.toLowerCase().indexOf("start") >= 0) {
     axios
       .post(
-        "https://api.telegram.org/bot566997013:AAHA1BuuWdRaeOTVnfWE33oqDoB20eqk3sg/sendMessage",
+        `https://api.telegram.org/bot${API_KEY}/sendMessage`,
         {
           chat_id: message.chat.id,
           text: 'DailyCryptoPrice Bot Welcomes you!\nType /price to recieve the prices of top 15 crypto currencies on coinmarket.com'
@@ -53,11 +54,10 @@ app.post("/", function(req, res) {
       }
       priceTable +=
         "\nSimply type /price to get price of cryptocurrencies";
-      //console.log(priceTable);
 
       axios
         .post(
-          "https://api.telegram.org/bot566997013:AAHA1BuuWdRaeOTVnfWE33oqDoB20eqk3sg/sendMessage",
+          `https://api.telegram.org/bot${API_KEY}/sendMessage`,
           {
             chat_id: message.chat.id,
             text: priceTable
